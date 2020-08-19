@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 6 - 13</title>
+</head>
+<body>
+    <h1>@b@c@xi</h1>
+    <input type="text" name="seinha" id="inpSenha" placeholder="sua senha" onkeyup="calc()"><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        var senha = document.getElementById('inpSenha').value;
+        var a = document.getElementsByName('seinha')[0].value;
+        for (let i = 0; i < senha.length; i++) {
+            a.innerHTML = senha.replace('a','@');
+            senha = senha.replace('a', '@');
+            senha = senha.replace('e','3');
+
+            senha = senha.replace('A', '@');
+            senha = senha.replace('E','3');
+
+            //senha = senha.replace(/a/gi,'@');
+            //senha = senha.replace(/e/gi,'3');
+        }
+        result.innerHTML = senha;
+    }
+</script>

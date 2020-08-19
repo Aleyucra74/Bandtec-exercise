@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4 - 12</title>
+</head>
+<body>
+    <h1>true love</h1>
+    <input type="text" id="inpNome" placeholder="quem vc mais ama na vida"><br>
+    <input type="text" id="inpAmo" placeholder="o qnt vc ama ela em numero"><br>
+    <button onclick="love()">expressar amor</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function love() {
+        let nome = document.getElementById('inpNome').value;
+        let amor = parseInt(document.getElementById('inpAmo').value);
+        let cont = 0;
+        while (cont < amor) {
+            result.innerHTML += `${nome}, daisuki, always remember that<br>`;
+            cont++
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 10</title>
+</head>
+
+<body>
+    <h1>jokenpô</h1>
+    <button onclick="jogar()">jogar</button><br>
+    <div id="result"></div>
+    <img src="" alt="" id="imgFoto" width="200px">
+</body>
+
+</html>
+<script>
+    function jogar() {
+        let jokenpo = Math.floor(Math.random() * 3) + 1;
+        console.log(jokenpo);
+        if (jokenpo == 1) {
+            result.innerHTML = 'olha a pedra';
+            imgFoto.src = 'https://i.ytimg.com/vi/cb7lRInEa6c/0.jpg';
+        } else if (jokenpo == 2) {
+            result.innerHTML = 'papel do corona';
+            imgFoto.src = 'https://pbs.twimg.com/media/ESQbFgiX0AI8uja.jpg';
+        } else {
+            result.innerHTML = 'tenório tesoura';
+            imgFoto.src ='https://pbs.twimg.com/media/DyMwnFoWoAAqTt4.jpg';
+        }
+    }
+</script>

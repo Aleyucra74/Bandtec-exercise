@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 9</title>
+</head>
+<body>
+    <h1>Juliana</h1>
+    <div>
+        vc ja clicou <b id="bValor">0</b> vezes.
+    </div>
+    <button onclick="calc()">clique cabalistico</button>
+</body>
+</html>
+<script>
+    let click = 0;
+    function calc() {
+        click++;
+        bValor.innerHTML = click;
+        if(click == 3 || click == 4 || click == 7 || click == 10) {
+            alert(`vc clicou ${click} vezes e a julia gosta desse numero`);
+        }
+    }
+</script>

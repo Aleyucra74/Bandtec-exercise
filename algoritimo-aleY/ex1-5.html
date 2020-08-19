@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> exercicio 1 - 5 </title>
+</head>
+<body>
+    <input type="text" placeholder="qnts latinhas de refri vc toma por dia?" id="inpQtnd">
+    <br>
+    <button onclick="quantidadeRefri()">Quantos refri?</button><br>
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    function quantidadeRefri() {
+        let qntRefri = parseInt(inpQtnd.value) * 365;
+
+        if (qntRefri >= 500) {
+            result.innerHTML = `ta fincado diabetico!!!!<br>`;
+            result.style.color = 'white';
+            result.style.backgroundColor = 'red';
+        }
+
+        result.innerHTML += `vc tomou ${qntRefri} de refri por ano, seu diabetico!!!`;
+
+    }
+
+</script>

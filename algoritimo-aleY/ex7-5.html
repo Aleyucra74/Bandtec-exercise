@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 - 5</title>
+</head>
+<body>
+    <h1>Financiamento da casa prorpia</h1>
+
+    <input type="text" id="inpRenda" placeholder="Sua renda familiar ">
+    <br>
+    <input type="text" id="inpPrestacao" placeholder="Valor da prestacao">
+    <br>
+    <button onclick="calc()"> Verificar Financiamento</button>
+    <br>
+    <div id="result"></div>
+    <div id="result2" style="font-weight: bold; color: red;"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let renda = parseInt(document.getElementById('inpRenda').value);
+        let prestacao = parseInt(document.getElementById('inpPrestacao').value);
+
+        let valor = (prestacao / renda)*100;
+
+        result.innerHTML = `a prestação corresponde a ${valor}% da renda familiar`;
+
+        if (valor > 30) {
+            result.innerHTML = 'sera necessario complementar a renda familiar';
+        }
+
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 6 - 12</title>
+</head>
+<body>
+    <h1>pares</h1>
+    <button onclick="pares()">Eu S2 pares</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function pares() {
+        let cont = 1;
+        while (cont <= 100) {
+            if (cont % 2 ==0) {
+                result.innerHTML += `${cont}<br>`;
+            }
+            cont++
+        }
+    }
+</script>

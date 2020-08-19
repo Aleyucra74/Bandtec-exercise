@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2 - 6</title>
+</head>
+<body>
+    <h1>times</h1>
+    <select id="slcTime">
+        <option value="" disabled selected>-- escolha um time --</option>
+        <option value="cor">Corinthians</option>
+        <option value="pal">Palmeiras</option>
+        <option value="san">Santos</option>
+        <option value="sp">Tricolor paulista</option>
+    </select>
+    <br>
+    <button onclick="calc()">fale sobre esse time</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let time = document.getElementById('slcTime').value;
+
+        if (time == "cor") {
+            result.innerHTML = 'Salve o Corinthians';
+        }else if (time == "pal") {
+            result.innerHTML = 'Salve o alviverde imponente';
+        } else if(time == "san") {
+            result.innerHTML = 'Agora que dá a bola é o Santos';
+        }else if(time == "sp") {
+            result.innerHTML = 'Salve o Tricolor paulista';
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 15 - 5</title>
+</head>
+<body>
+    <h1>Auto escola</h1>
+    <input type="text" placeholder="seu nome" id="inpNome"><br><br>
+    <input type="text" placeholder="sua idade" id="inpIdade"><br>
+    <button onclick="calc()">Avaliar aluno</button>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let idade = parseInt(document.getElementById('inpIdade').value);
+        let nome = document.getElementById('inpNome').value;
+
+        if (idade > 18) {
+            result.innerHTML = `${nome} vamos tirar a CNH?, pra trabalhar meu`;
+        } else {
+            result.innerHTML = `${nome} ta fazendo oq aqui meu, vai pra casa!`;
+        }
+
+
+
+    }
+
+</script>

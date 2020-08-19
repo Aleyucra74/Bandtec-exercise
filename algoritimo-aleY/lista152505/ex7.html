@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 - 15</title>
+</head>
+<body>
+    <h1>boa tarde</h1>
+    <input type="text" id="inpFrase" placeholder="uma frase" onkeyup="calc()"><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        var frs = document.getElementById('inpFrase').value;
+        for (let i = 0; i < frs.length; i++) {
+            result.innerHTML += `${frs[i]}<br>`;
+        }
+    }
+</script>

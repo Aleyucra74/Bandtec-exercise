@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 12 - 5</title>
+</head>
+<body>
+    <h1>Email</h1>
+
+    <input type="text" placeholder="Informe o ano parça?" id="inpAno">
+    <br>
+    <button onclick="fato()">Ver fato</button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function fato() {
+        let ano = document.getElementById('inpAno').value;
+
+        if (ano > 1969) {
+            result.innerHTML = `no ano ${ano} o email ja havia sido aprimorado - poderia ser enviado para outro conmputador`;
+        } else if (ano > 1965 && ano < 1969) {
+            result.innerHTML = `no ano ${ano} o email ja havia sido criado`;                
+        } else if (ano == 1965) {
+            result.innerHTML = `no ano ${ano} o email estava sendo criado`;
+        } else {
+            result.innerHTML = `no ano ${ano} o email nem havia sido criado ainda`;
+        }
+
+
+    }
+
+
+
+
+</script>

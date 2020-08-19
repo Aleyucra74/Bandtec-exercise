@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9 - 10</title>
+</head>
+<body>
+    <h1>Numeros</h1>
+    <p>Numeros pares: <b id="bPar">0</b></p>
+    <p>Numeros impares: <b id="bImpar">0</b></p><br>
+    <button onclick="random()">sortear um numero</button>
+</body>
+</html>
+<script>
+    let contP = 0;
+    let contI = 0;
+    function random() {
+        let rdm = Math.floor(Math.random()*100)+1;
+        console.log(rdm);
+        if (rdm % 2 == 0) {
+            bPar.innerHTML = ++contP;
+        } else {
+            bImpar.innerHTML = ++contI;
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 - 6</title>
+</head>
+<body>
+    <h1>meses</h1>
+    <select id="slcMeses" onchange="calc()">
+        <option value="" disabled selected>-- escolha uma --</option>
+        <option value="inverno">Jan</option>
+        <option value="inverno">Fev</option>
+        <option value="primavera">Mar</option>
+        <option value="primavera">Abr</option>
+        <option value="primavera">Mai</option>
+        <option value="verao">Jun</option>
+        <option value="verao">Jul</option>
+        <option value="verao">Ago</option>
+        <option value="outono">Set</option>
+        <option value="outono">Out</option>
+        <option value="outono">Nov</option>
+        <option value="inverno">Dez</option>
+    </select><br>
+    <img src="" alt="" id="imgEstacao">
+</body>
+</html>
+<script>
+    function calc() {
+        let estacao = document.getElementById('slcMeses').value;
+        if (estacao == 'inverno') {
+            imgEstacao.src = 'inverno.jpg';
+        }else if (estacao == 'verao') {
+            imgEstacao.src = 'verao.jpg';
+        }else if(estacao == 'primavera'){
+            imgEstacao.src = 'primavera.jpg';
+        }else if (estacao == 'outono') {
+            imgEstacao.src = 'outono.jpg';
+        }
+    }
+</script>

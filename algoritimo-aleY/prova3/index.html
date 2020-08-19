@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prova 3</title>
+</head>
+
+<body>
+    <h1>Teste "Pense Rapido"</h1>
+    <input type="text" id="inpTexto" placeholder="Algo com ao menos 5 letras" onkeyup="segundos()">
+    <button onclick="teste()">Iniciar teste</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    var seg;
+    function segundos() {
+        seg = new Date()/1000;
+        // seg = new Date().getSeconds();
+        // console.log(seg);
+    }
+
+    function teste() {
+        result.innerHTML = '';
+        var tempo = new Date()/1000;
+        var segFinal = tempo-seg;
+        var text = document.getElementById('inpTexto').value;
+        var tmn = text.length;
+        // text.trimStart() > 5 && text.trimEnd() > 5
+        // text.replace(/ /g,"");
+        if (text.trimEnd().trimStart().length < 5) {
+            result.innerHTML += 'Valor invalido, digite ao menos 5 letras sem espaços em brancos na extremidades';
+        } else {
+            inpTexto.value = '';
+            for (var i = 0; i < text.length; i++) {
+                tmn--;
+                result.innerHTML += `${text[tmn]} <br>`;
+                // tempo = tmn == 0 ? new Date().getSeconds() : '';
+                // console.log(tmn);
+            }
+                // console.log(tempo);
+            result.innerHTML += `Voce levou ${segFinal.toFixed(3)} segundos para sair da frase e clicar no botao`;
+        }
+    }
+</script>

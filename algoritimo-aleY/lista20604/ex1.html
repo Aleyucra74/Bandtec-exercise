@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 </title>
+</head>
+<body>
+    <h1>Governo</h1>
+    <input type="text" id="inpRendaUsuario" placeholder="renda do usuario"><br>
+    <input type="text" id="inpRendaTotal" placeholder="renda total"><br>
+    <button onclick="calc()">verificar ajuda</button>
+
+</body>
+</html>
+<script>
+    function calc() {
+        let rendaUsuario = parseInt(document.getElementById('inpRendaUsuario').value);
+        let rendaTotal = parseInt(document.getElementById('inpRendaTotal').value);
+
+        if (rendaUsuario <= 1050 && rendaTotal <=2100) {
+            alert('voce tem direito!');
+        } else {
+            alert('voce nao tem direito, sry');
+        }
+    }
+</script>

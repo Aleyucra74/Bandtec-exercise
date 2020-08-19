@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4 - 10</title>
+</head>
+<body>
+    <h1>cabalístico</h1>
+    <button onclick="numero()">quero um cabalístico</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function numero() {
+        let n = Math.floor(Math.random()*144)+1;
+        console.log(n);
+        if (n == 3 || n == 4 || n == 7 || n == 10 || n == 12 || n == 144) {
+            result.innerHTML = `${n}, eu S2 numeros cabalisticos`;
+        }else {
+            result.innerHTML = `${n}, ah me da um numero bom ai`;
+        }
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercicio 3 - 18</title>
+    <style>
+        #barraUm { height: 20px; width: 600px; background-color: blue;}
+        #barraDois { height: 20px; width: 600px; background-color: brown;}
+    </style>
+</head>
+<body>
+    <h1>Barras de vida</h1>
+    <div id="barraUm"></div><br>
+    <button onclick="apanhar(-25, 'barraUm')">apanhar devagar</button>
+    <button onclick="apanhar(-80, 'barraUm')">apanhar forte</button>
+    <button onclick="apanhar(10, 'barraUm')">concentrar forca total</button><br><br>
+
+    <div id="barraDois"></div><br>
+    <button onclick="apanhar(-25, 'barraDois')">apanhar devagar</button>
+    <button onclick="apanhar(-80, 'barraDois')">apanhar forte</button>
+    <button onclick="apanhar(10, 'barraDois')">concentrar forca total</button>
+</body>
+</html>
+<script>
+    let vida1 = 600;
+    let vida2 = 600;
+function apanhar(forca,ids) {
+    var barra = document.getElementById(ids);
+    vida1 += forca;
+    vida2 += forca;
+    if (vida1 < 0) {
+        vida1 = 0;
+        barra.style.display= 'none'
+    }
+    if (vida2 < 0) {
+        vida2 = 0;
+        barra.style.display= 'none'
+    }
+    barra.style.width = `${vida1}px`; 
+    barra.style.width = `${vida2}px`; 
+}
+
+</script>

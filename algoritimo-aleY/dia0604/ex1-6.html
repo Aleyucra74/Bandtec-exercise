@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 6</title>
+</head>
+
+<body>
+    <h1>aluno</h1>
+    <input type="text" id="inpNota" placeholder="nota do aluno"><br>
+    <button onclick="calc()">classificar aluno</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function calc() {
+        let nota = parseInt(document.getElementById('inpNota').value);
+        result.innerHTML = '';
+        result.style.color = '';
+
+        if (nota < 0) {
+            result.innerHTML = `nota ${nota} é invalida pf entre 0 e 10`;
+        } else if (nota <5) {
+            result.innerHTML = 'aluno precisa de ajuda';
+            result.style.color = 'red';
+        } else if (nota <=7) {
+            result.innerHTML = 'aluno na media';
+            result.style.color = 'orange';
+        } else if (nota <=9.5) {
+            result.innerHTML = 'aluno acima da media';
+            result.style.color = 'green';
+        } else if (nota <= 10) {
+            result.innerHTML = 'aluno fora de curva';
+            result.style.color = 'blue';
+        } else {
+            result.innerHTML = `nota ${nota} é invalida pf entre 0 e 10`;
+        }
+
+    }
+</script>

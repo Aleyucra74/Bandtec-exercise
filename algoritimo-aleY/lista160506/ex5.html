@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 5 - 16</title>
+</head>
+<body>
+    <h1>alunos</h1>
+    <input type="text" name="" id="inpAluno" placeholder="coloque o nome do aluno"><br>
+    <button onclick="alunos()">cadastrar</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    const alunoArray = [];
+    function alunos() {
+        result.innerHTML = '';
+        let number = alunoArray.length+1;
+        let nameStudents = document.getElementById('inpAluno').value;
+        alunoArray.push(nameStudents);
+        for (let i = 0; i < alunoArray.length; i++) {
+            number--;
+            result.innerHTML += `${alunoArray[number]}<br>`;
+        }
+    }
+</script>

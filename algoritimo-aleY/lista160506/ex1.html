@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 16</title>
+</head>
+<body>
+    <h1>vetor</h1>
+    <input type="text" id="inpFilme" placeholder="seu filme favorito"><br>
+    <button onclick="filme()">painel</button>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    const filmes = [];
+    function filme() {
+        result.innerHTML='';    
+        var filme = document.getElementById('inpFilme').value;
+
+        filmes.push(filme);
+        if(filmes.length <= 2) {
+            result.innerHTML += 
+                `Seu filme favorito é: ${filmes[0]}<br>
+                Seu 3° filme favorito é: Ainda não existe<br>
+                Total de filmes é: ${filmes.length}`;
+        }else {
+            result.innerHTML += 
+                `Seu filme favorito é: ${filmes[0]}<br>
+                Seu 3° filme favorito é: ${filmes[2]}<br>
+                Total de filmes é: ${filmes.length}`;
+        }
+
+
+    }
+</script>

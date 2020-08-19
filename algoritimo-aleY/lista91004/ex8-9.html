@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 - 9</title>
+</head>
+<body>
+    <h1>George Quisito</h1>
+    <select id="slcTv">
+        <option value="" disabled selected>-- escolha uma --</option>
+        <option value="samsung">samsung</option>
+        <option value="lg">lg</option>
+        <option value="mondial">mondial</option>
+        <option value="britania">britania</option>
+    </select><br>
+    <input type="text" id="inpPreco" placeholder="qual o valor"><br>
+    <button onclick="calc()">analisar compra</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let tv = document.getElementById('slcTv').value;
+        let valor = parseInt(document.getElementById('inpPreco').value);
+        result.innerHTML = '';
+        if (valor < 800 || valor > 2000) {
+            result.innerHTML = 'tv fora da faixa de preco <br>';
+            if (valor < 800) {
+                result.innerHTML += ' preco baixo demais';
+            }else {
+                result.innerHTML += ' tv cara demais, infelizmente';
+            }
+        } else if(tv == 'mondial' || tv == 'britania') {
+            result.innerHTML = 'na faixa de preco, porem marca nao confiavel';
+        } else if(tv == 'lg' || tv == 'samsung') {
+            result.innerHTML = 'essa tv pode entrar na sua lista';
+        }
+    }
+</script>

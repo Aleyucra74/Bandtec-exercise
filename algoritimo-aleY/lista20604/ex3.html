@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3</title>
+</head>
+
+<body>
+    <h1>veganoooo</h1>
+    <div>
+        oq vc quer de cafe de manha
+        <select name="" id="cafe">
+            <option value="" disabled selected> -- escolha um --</option>
+            <option value="ovos">ovos</option>
+            <option value="leiteDeArroz">leite De Arroz</option>
+            <option value="bacon">bacon</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        oq vc quer de almoço
+        <select name="" id="almoco">
+            <option value="" disabled selected> -- escolha um --</option>
+            <option value="bife">bife</option>
+            <option value="hamburguerDeSoja">hamburguer de soja</option>
+            <option value="frangoGrelhado">frango grelhado</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        oq vc quer de janta
+        <select name="" id="janta">
+            <option value="" disabled selected> -- escolha um --</option>
+            <option value="picanhaDeSoja">picanha de soja</option>
+            <option value="cupim">cupim</option>
+            <option value="coracao">coração</option>
+        </select>
+    </div>
+    <br>
+    <button onclick="calc()">sou vegano</button>
+</body>
+</html>
+<script>
+    function calc() {
+        let cafe = document.getElementById('cafe').value;
+        let almoco = document.getElementById('almoco').value;
+        let janta= document.getElementById('janta').value;
+        if (cafe == 'leiteDeArroz' && almoco == 'hamburguerDeSoja' && janta == 'picanhaDeSoja') {
+            alert('sim, vc é vegano');
+        } else {
+            alert('nao vc nao é vegano');
+        }
+    }
+
+</script>

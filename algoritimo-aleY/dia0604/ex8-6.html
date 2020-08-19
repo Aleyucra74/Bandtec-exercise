@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 - 6</title>
+</head>
+
+<body>
+    <h1>click</h1>
+    <h3>voce ja clicou <b id="bVezes">0</b> vezes!</h3>
+    <button onclick="calc()">clica nimim</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    let click = 0;
+
+    function calc() {
+        click++;
+        bVezes.innerHTML = click;
+
+        if (click < 5) {
+            result.innerHTML = 'dedo fraco ein';
+        } else if (click <= 10) {
+            result.innerHTML = 'dedo bom,mano';
+        } else if (click <= 15) {
+            result.innerHTML = 'gosta de clicar ein';
+        } else {
+            result.innerHTML = 'dedo nervoso';
+        }
+    }
+</script>

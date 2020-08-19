@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercicio 4 - 18</title>
+</head>
+<body>
+    <h1>Hamburgueria</h1>
+    <div> Total da sua compra até agora: <span id="spItems">0</span> item(s) -> Valor da compra + tx de entrega: R$<span id="spTotal">0.00</span></div>
+    <div>
+        1 - Queijo Mussarela (que custa 5,00 a porção) <br>
+        2 - Carne Bovina (que custa 15,00 a porção)   <br>
+        3 - Carne Suina (que custa 12,00 a porção) <br>
+        4 - Carne Vegana (que custa 25,00 a porção)   <br>
+        5 - Alface (que custa 2,50 a porção)   <br>
+        6 - Tomate (que custa 3,50 a porção) <br>
+        7 - Refrigerante lata (que custa 5.75 cada) <br>
+        8 - Caixinha de suco de batata doce com ameixa (que custa 4.50 cada) <br>
+    </div>
+    <button onclick="total(1, 5.00)">queijo</button>
+    <button onclick="total(2, 15.00)">carne bovina</button>
+    <button onclick="total(3, 12.00)">carne suina</button>
+    <button onclick="total(4, 25.00)">carne vegana</button>
+    <button onclick="total(5, 2.50)">alface</button>
+    <button onclick="total(6, 3.50)">tomate</button>
+    <button onclick="total(7, 5.75)">Refrigerante</button>
+    <button onclick="total(8, 4.50)">suco</button>
+    <button onclick="total(0, 0)">limpar tudo</button>
+</body>
+</html>
+<script>
+    const pedido = {
+        items: [],
+        totalDinheiro: 4
+    }
+
+    function total(item,valor) {
+        if (item != 0 && valor != 0) {
+            pedido.items.push(item);
+            pedido.totalDinheiro += valor;
+        }else{
+            pedido.items.length = 0;
+            pedido.totalDinheiro = 0;
+        }
+        console.log(item);
+        console.log(valor);
+        if (pedido.totalDinheiro > 70) {
+            pedido.totalDinheiro -= 4;
+        }
+        spItems.innerHTML = pedido.items.length;
+        spTotal.innerHTML = pedido.totalDinheiro;
+    }
+</script>

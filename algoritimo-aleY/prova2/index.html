@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prova 2</title>
+</head>
+<body>
+    <h1><b>Pedra - Papel - Tesoura</b></h1>
+    <br>
+    <h3>Placar:</h3>
+    <div><p id="pResultado1">Jogador 1: <b id="bJogador1">0</b></p></div>
+    <div><p id="pResultado2">Jogador 2: <b id="bJogador2">0</b></p></div><br>
+    <button onclick="calc()">Jo Ken Po!</button><br>
+    <img src="" alt="" id="imgJogador1">
+    <img src="" alt="" id="imgJogador2"><br>
+    <div id="result">Resultado: <b id="bResult"></b></div>
+</body>
+</html>
+<script>
+    let ganhador1 = 0;
+    let ganhador2 = 0;
+    let randomico1 = 0;
+    let randomico2 = 0;
+
+    function calc() {
+        bResult.innerHTML = '';
+        // cor();
+        jogadorUm();
+        jogadorDois();
+
+        if (ganhador1 > ganhador2) {
+            pResultado1.style.color = 'blue';
+            pResultado2.style.color = 'red';
+        } else if (ganhador2 > ganhador1) {
+            pResultado1.style.color = 'red';
+            pResultado2.style.color = 'blue';
+        } else if(ganhador1 === ganhador2){
+            pResultado2.style.color = 'black';
+            pResultado1.style.color = 'black';
+        }
+
+        if(randomico1 == 1 && randomico2 == 3 ) {
+            ganhador1++;
+            bResult.innerHTML += `Jogador 1 vence porque Pedra quebra a Tesoura`;
+            bJogador1.innerHTML = ganhador1;
+        }else if (randomico1 == 1 && randomico2 == 2) {
+            ganhador2++;
+            bResult.innerHTML += `Jogador 2 vence porque o Papel cobre a Pedra`;
+            bJogador2.innerHTML = ganhador2;
+        }else if (randomico1 ==  2 && randomico2 == 3) {
+            ganhador2++;
+            bResult.innerHTML += `Jogador 2 vence porque a Tesoura corta Papel `;
+            bJogador2.innerHTML = ganhador2;
+        }else if(randomico1 == 2 && randomico2 == 1){
+            ganhador1++;
+            bResult.innerHTML += `Jogador 1 vence porque Papel cobre a Pedra`;
+            bJogador1.innerHTML = ganhador1;
+        }else if(randomico1 == 3 && randomico2 == 2) {
+            ganhador1++;
+            bResult.innerHTML += `Jogador 1 vence porque Tesoura corta Papel`;
+            bJogador1.innerHTML = ganhador1;
+        }else if(randomico1 == 3 && randomico2 == 1) {
+            ganhador2++;
+            bResult.innerHTML += `Jogador 2 vence porque Pedra quebra Tesoura`;
+            bJogador2.innerHTML = ganhador2;
+        }else{
+            bResult.innerHTML = 'EMPATE';
+        }
+    }
+
+    // function cor() {
+    //     if (ganhador1> ganhador2) {
+    //         pResultado1.style.color = 'blue';
+    //         pResultado2.style.color = 'red';
+    //     } else if (ganhador2 > ganhador1) {
+    //         pResultado1.style.color = 'red';
+    //         pResultado2.style.color = 'blue';
+    //     } else {
+    //         pResultado2.style.color = 'black';
+    //         pResultado1.style.color = 'black';
+    //     }
+    // }
+
+
+    function jogadorUm() { 
+        let random = Math.floor(Math.random() *3)+1;
+        randomico1 = random;
+        console.log(randomico1);
+        if (random == 1) {
+            imgJogador1.src = 'pedra.png';
+        } else if(random == 2){
+            imgJogador1.src = 'papel.png';
+        }else if(random == 3){
+            imgJogador1.src = 'tesoura.png';
+        }
+    }
+
+    function jogadorDois() {
+        let random2 = Math.floor(Math.random() *3)+1;
+        randomico2 = random2;
+        console.log(randomico2);
+        if (random2 == 1) {
+            imgJogador2.src = 'pedra.png';
+        } else if(random2 == 2){
+            imgJogador2.src = 'papel.png';
+        }else if(random2 == 3){
+            imgJogador2.src = 'tesoura.png';
+        }
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 - 5</title>
+</head>
+<body>
+    <h1>Banco Itado</h1>
+    <br>
+    <input type="text" id="inpSaldoConta" placeholder="saldo da conta">
+    <br>
+    <input type="text" id="inpValorDebito" placeholder="valor de debito">
+    <br>
+    <button onclick="calc()">analise da conta </button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let saldoConta = parseInt(document.getElementById('inpSaldoConta').value);
+        let debito = parseInt(document.getElementById('inpValorDebito').value);
+        let saldoAtual = saldoConta - debito;
+
+        result.innerHTML = `o saldo atual da conta corrente é de R$${saldoAtual.toFixed(2)}`;
+
+        if (saldoAtual < 0) {
+            result.style.color = 'red';
+            result.style.fontWeight = 'bold';
+        } else {
+            result.style.color = 'blue';
+        }
+    }
+
+
+</script>

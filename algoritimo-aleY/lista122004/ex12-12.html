@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 12 - 12</title>
+</head>
+
+<body>
+    <h1>GHOST</h1>
+    <input type="text" id="inpNmr" placeholder="qnts elefantes"><br>
+    <button onclick="elefante()">atazanar o medium</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function elefante() {
+        let nmr = parseInt(document.getElementById('inpNmr').value);
+        let cont = 0;
+        result.innerHTML='';
+        while (cont < nmr) {
+            let frase = ', incomodam';
+            result.innerHTML += '1 <l>elefante incomoda muita gente!</l><br>';
+            result.innerHTML += `${cont+2} elefantes${frase.repeat(cont+2)} muito mais!<br><br>`;
+            cont++;
+        }
+    }
+</script>

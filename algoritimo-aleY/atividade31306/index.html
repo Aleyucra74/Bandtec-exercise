@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 3 - 13/06</title>
+</head>
+
+<body>
+    <h1>Artista</h1>
+    <input type="text" id="inpArtistaUm" placeholder="nome do 1° artista"><br>
+    <input type="text" id="inpMusicaUm" placeholder="musica do 1° artista"><br>
+    <input type="text" id="inpDataUm" placeholder="data de lançamento de musica(mm/dd/yyyy)"
+        style="width: 260px;"><br><br>
+
+    <input type="text" id="inpArtistaDois" placeholder="nome do 2° artista"><br>
+    <input type="text" id="inpMusicaDois" placeholder="musica do 2° artista"><br>
+    <input type="text" id="inpDataDois" placeholder="data de lançamento de musica(mm/dd/yyyy)"
+        style="width: 260px;"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <div id="divBotao" style="display: none;">
+        <button onclick="viewsum()">Artista 1 (+50 views)</button><br><br>
+        <button onclick="viewsdois()">Artista 2 (+50 views)</button>
+    </div>
+    <p id="pFrase" style="display: none;">
+        Visualizações da musica <b id="bMusica1">musica1</b> de <b id="bArtista1">artista1</b>: <u
+            id="uViews1">0</u>(media de <b id="bMedia1">0.0</b> views/dia) <br>
+        Visualizações da musica <b id="bMusica2">musica1</b> de <b id="bArtista2">artista1</b>: <u
+            id="uViews2">0</u>(media de <b id="bMedia2">0.0</b> views/dia)
+    </p>
+</body>
+
+</html>
+<script>
+    const artista1 = {
+        nome: '',
+        musica: '',
+        data: ''
+    };
+    const artista2 = {
+        nome: '',
+        musica: '',
+        data: ''
+    };
+
+    let views = 0;
+    let views2 = 0;
+    var dataAtual = new Date();
+    var mediaData=0;
+    var mediaData2 = 0;
+
+    function cadastrar() {
+        let singer = document.getElementById('inpArtistaUm').value;
+        let music = document.getElementById('inpMusicaUm').value;
+        let date = new Date(document.getElementById('inpDataUm').value);
+        let singer2 = document.getElementById('inpArtistaDois').value;
+        let music2 = document.getElementById('inpMusicaDois').value;
+        let date2 = new Date(document.getElementById('inpDataDois').value);
+
+        artista1.nome = singer;
+        artista1.musica = music;
+        artista1.data = date;
+        artista2.nome = singer2;
+        artista2.musica = music2;
+        artista2.data = date2;
+        return alert('cadastrado', mostrar())
+    }
+
+    function mostrar() {
+        divBotao.style.display = 'block'
+    }
+
+    function mostrardois() {
+        pFrase.style.display = 'block'
+    }
+
+    function mostrarDados() {
+        bMusica1.innerHTML = artista1.musica;
+        bMusica2.innerHTML = artista2.musica;
+        bArtista1.innerHTML = artista1.nome;
+        bArtista2.innerHTML = artista2.nome;
+        uViews1.innerHTML = views;
+        uViews2.innerHTML = views2;
+        bMedia1.innerHTML = Math.abs(mediaData).toFixed(1);
+        bMedia2.innerHTML = Math.abs(mediaData2).toFixed(1);
+    }
+
+    function viewsum() {
+        mostrardois();
+        views += 50;
+        var anoTotal = dataAtual.getFullYear() - artista1.data.getFullYear();
+        var diasContados = ( ((anoTotal)*365) + (dataAtual.getMonth()*30) + (dataAtual.getDate()) )
+        mediaData = views / diasContados;
+        console.log(diasContados)
+        mostrarDados();
+    }
+
+    function viewsdois() {
+        mostrardois();
+        views2 += 50;
+        var anoTotal = dataAtual.getFullYear() - artista2.data.getFullYear();
+        var diasContados = ( ((anoTotal)*365) + (dataAtual.getMonth()*30) + (dataAtual.getDate()) )
+        mediaData2 = views2 / diasContados;
+        console.log(diasContados)
+        mostrarDados();
+    }
+</script>

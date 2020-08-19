@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 5</title>
+</head>
+<body>
+    <h1>BOM DOCE</h1>
+    <input type="text" id="inpChoco" placeholder="qntd de doce"><br>
+    <button onclick="calc()">Compra</button>
+    <br>    
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let choco = parseInt(document.getElementById('inpChoco').value);
+        let valorA = 2.50;
+
+        if(choco < 12 ) {
+            let valor = choco * 3;
+            result.innerHTML = `o valor da compra é de ${valor.toFixed(2)}`;
+        } else {
+            let valorB = choco * valorA;
+            result.innerHTML = `o valor da compra é de ${valorB.toFixed(2)}`;
+        }
+
+    }
+</script>

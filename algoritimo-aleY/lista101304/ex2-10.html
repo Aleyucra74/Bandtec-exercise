@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2 - 10</title>
+</head>
+<body>
+    <h1>dado</h1>
+    <button onclick="jogador1()">jogador 1 jogar dado</button>
+    <button onclick="jogador2()">jogador 2 jogar dado</button><br>
+    <div id="jogar1"></div><br>
+    <div id="jogar2"></div>
+</body>
+</html>
+<script>
+    let random = 0;
+    let random2 = 0;
+    function jogador1() {
+        random = Math.floor(Math.random() * 6) +1;
+        jogar1.innerHTML = random;
+    }
+
+    function jogador2() {
+        jogar2.innerHTML = '';
+        random2 = Math.floor(Math.random() * 6) +1;
+        jogar2.innerHTML = random2;
+        if(random > random2) {
+            jogar2.innerHTML += '<br>jogador 1 ganhou';
+        } else if (random2 > random) {
+            jogar2.innerHTML += '<br>jogador 2 ganhou';
+        } else if(random == random2){
+            jogar2.innerHTML += '<br>empate';
+        }
+    }
+</script>

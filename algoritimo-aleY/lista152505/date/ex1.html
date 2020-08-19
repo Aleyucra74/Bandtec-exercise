@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 15 date</title>
+</head>
+<body>
+    <h1>data nasc</h1>
+    <input type="text" name="" id="inpData" placeholder="sua data de nasc mm/dd/aaaa"><br>
+    <button onclick="calc()">ver idade atual</button>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        var dataAtual = new Date();
+        var dataNasc = new Date(document.getElementById('inpData').value);
+        var idade = dataAtual.getFullYear() - dataNasc.getFullYear();
+        result.innerHTML += `vc tem ${idade} anos,
+             ${((idade-1)* 12) + dataAtual.getMonth()+1 } meses 
+             e ${ ((idade-1) *365) + (dataAtual.getMonth()*30) + dataAtual.getDate() } dias`;
+    }
+</script>

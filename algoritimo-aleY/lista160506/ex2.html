@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2 - 16</title>
+</head>
+<body>
+    <h1>Turista</h1>
+    <input type="text" name="" id="inpLugar" placeholder="Lugares que ja viajou"><br>
+    <button onclick="viajem()">Cadastrar local</button><br>
+    <input type="text" name="" id="inpNumero" placeholder="numero da viagem"><br>
+    <button onclick="relembrar()">relembrar viagem</button><br>
+    <div id="remeber"></div>
+</body>
+</html>
+<script>
+    const viajems = [];
+    function viajem() {
+        let lugar = document.getElementById('inpLugar').value;
+        viajems.push(lugar);
+        return alert('cadastrado');
+    }
+
+    function relembrar() {
+        remeber.innerHTML = '';
+        let nmrViajem = document.getElementById('inpNumero').value;
+
+        if (nmrViajem >= viajems.length) {
+            remeber.innerHTML += `voce nao fez uma ${nmrViajem}ª viagem`;
+        }else{
+        remeber.innerHTML += viajems[nmrViajem];
+        }
+    }
+</script>

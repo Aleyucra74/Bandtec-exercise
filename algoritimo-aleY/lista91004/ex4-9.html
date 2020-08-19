@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4 - 9</title>
+</head>
+<body>
+    <h1>Bandtec</h1>
+    <input type="text" id="inpEmpresa" placeholder="empresa"><br>
+    <input type="text" id="inpBolsa" placeholder="bolsa da empresa"><br>
+    <input type="text" id="inpVr" placeholder="vr da empresa"><br>
+    <input type="text" id="inpTempo" placeholder="tempo q demora da empresa ate a facu"><br>
+    <button onclick="calc()">È preferida</button>
+</body>
+</html>
+<script>
+    function calc() {
+        let empresa = document.getElementById('inpEmpresa').value;
+        let bolsa = parseInt(document.getElementById('inpBolsa').value);
+        let vr = parseInt(document.getElementById('inpVr').value);
+        let tempo = parseInt(document.getElementById('inpTempo').value);
+
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+            alert(`a empresa ${empresa} é uma das suas preferencias`)
+        } else {
+            alert(`a empresa ${empresa} esta fora da sau lista`)
+        }
+    }
+</script>

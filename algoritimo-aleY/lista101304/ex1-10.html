@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 10</title>
+</head>
+<body>
+    <h1>nota</h1>
+    <button onclick="nota()">gerar uma nota de 0 a 10 </button>
+    <button onclick="freq()">gerar uma freq de 0 a 100</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+
+    function nota() {
+        result.innerHTML = '';
+        let nota = Math.floor(Math.random() * 10) + 1;
+        result.innerHTML = nota.toFixed(1);
+    }
+
+    function freq() {
+        result.innerHTML = '';
+        let freq = Math.floor(Math.random() * 100) + 1;
+        result.innerHTML = freq.toFixed(1);
+    }
+</script>

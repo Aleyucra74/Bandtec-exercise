@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 14</title>
+</head>
+
+<body>
+    <h1>Lucky</h1>
+    <button onclick="calc()">Ver minha sorte</button><br>
+    <div id="result" style="width: 100%;display: flex;flex-wrap: wrap;"></div><br>
+    <div id="sorte"></div>
+</body>
+
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        sorte.innerHTML = '';
+        var coracao = 0;
+        var carta = 0;
+        for (var i = 1; i <= 21; i++) {
+            let number = Math.floor(Math.random() * 2) + 1;
+            if (number == 1) {
+                result.innerHTML += '<img src="cards.png" alt="carta" style="width: 25%;"><br>';
+                carta++;
+            }
+            if (number == 2) {
+                result.innerHTML += '<img src="kokoro.png" alt="coracao" style="width: 25%;"><br>';
+                coracao++;
+            }
+            if (coracao >= 11 || carta >= 11) {
+                break;
+            }
+        }
+        console.log(carta);
+        console.log(coracao);
+        if (i<21) {
+                sorte.innerHTML += 'ja sabemos o resultado<br>';
+        }else{
+            if (carta > coracao) {
+                sorte.innerHTML += 'Você tem mais sorte no jogo';
+            }
+            if (coracao > carta) {
+                sorte.innerHTML += 'Você tem mais sorte no amor';
+            }
+        }
+    }
+</script>

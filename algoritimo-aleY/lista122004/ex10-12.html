@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 10 - 12</title>
+</head>
+<body>
+    <h1>musculação</h1>
+    <input type="text" id="inpDia" placeholder="qnts dias vc malhar"><br>
+    <button onclick="malhar()">exibir rotina mensal</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function malhar() {
+        let dia = parseInt(document.getElementById('inpDia').value);
+        let cont = 0;
+        result.innerHTML='';
+        while (cont<30) {
+            if (cont % dia == 0) {
+                result.innerHTML += `Dia ${cont+1} - <b>Musculação</b><br>`;
+            } else {
+                result.innerHTML += `Dia ${cont+1} - comer, dormir etc<br>`;
+            }
+            cont++;
+        }
+    }
+</script>

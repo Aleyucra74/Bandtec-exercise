@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2.1 - 13</title>
+</head>
+<body>
+    <h1>Altura</h1>
+    <input type="text" id="inpAltura" placeholder="sua altura"><br>
+    <button onclick="esporte()">Analisar esporte</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function esporte() {
+        let alt = document.getElementById('inpAltura').value;
+        let esport = alt < '1.60';
+        let esport2 = alt < '1.85' && alt > '1.60';
+        let frase = '';
+        if (esport) {
+            frase = 'pode tentar ser piloto<br>';
+            frase += 'pode tentar ser velejador';
+        } else if(esport2){
+            frase = 'pode tentar ser jogador de futebol ou handbol';
+        }
+        result.innerHTML = frase;
+    }
+</script>

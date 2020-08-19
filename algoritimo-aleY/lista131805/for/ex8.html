@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 - 13</title>
+</head>
+<body>
+    <h1>cocaaa</h1>
+    <input type="text" id="inpQnt" placeholder="qnts coca?"><br>
+    <button onclick="calc()">ver quantidade</button><br>
+    <div id="result"></div>
+    
+</body>
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        let qnt = document.getElementById('inpQnt').value;
+        for (let i = 0; i < qnt; i++) {
+            result.innerHTML += '<img src="cocacoaacucar.jpg" alt="" width="100px"><br>';
+        }
+    }
+</script>

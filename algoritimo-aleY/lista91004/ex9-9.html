@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9 - 9</title>
+</head>
+<body>
+    <h1>Desempenho</h1>
+    <input type="text" id="inpNota" placeholder="nota do aluno"><br>
+    <input type="text" id="inpFreq" placeholder="frequencia do aluno"><br>
+    <button onclick="calc()">analisar aluno</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let nota = parseInt(document.getElementById('inpNota').value);
+        let freq = parseInt(document.getElementById('inpFreq').value);
+        if (nota < 0 || nota > 10) {
+            alert('onde ja se viu nota < 0 e > 10');
+            result.innerHTML = '';
+        } else if(freq < 0 || freq > 100) {
+            alert('onde ja se viu frequencia < 0 e > 100');
+            result.innerHTML = '';
+        } else if(freq < 75){
+            result.innerHTML = 'aluno reprovado por frequencia';
+        }else {
+            result.innerHTML = 'aluno aprovado por frequencia';
+            if (nota >= 0 && nota < 6) {
+                result.innerHTML = 'aluno ficou abaixo da media';
+            } else if(nota >= 6 && nota < 8) {
+                result.innerHTML = 'aluno ficou na media';
+            } else if (nota >= 8 && nota <= 10) {
+                result.innerHTML = 'aluno acima da media';
+            }
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 5 - 11</title>
+</head>
+<body>
+    <h1>nota</h1>
+    <input type="text" id="inpNota1"><br>
+    <input type="text" id="inpNota2"><br>
+    <button onclick="calc()">verificar resultado</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let nota1 = parseInt(document.getElementById('inpNota1').value);
+        let nota2 = parseInt(document.getElementById('inpNota2').value);
+        let media = (nota1 + nota2)/2;
+        console.log(media);
+        result.innerHTML = media < 6 ? 'infelizmente reprovado' :
+             media < 7.5 ? 'aprovado - automacao, seg ou testes' :
+                'aprovado - dev';
+    }
+</script>

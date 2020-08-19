@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Paraisopoles</h1>
+
+    <input type="text" placeholder="qntd de luz gasta no mes" id="inpLuz">
+    <br>
+    <button onclick="calc()">calcular a conta de luz</button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let luz = parseInt(inpLuz.value);
+        let valorMes = luz * 0.85;
+
+        if (luz <= 100) {
+            alert(`desconto de 10%, o valor sera de R$${valorMes * 0.9}`);
+        }else {
+            alert(`vc gastou mais de 100kWh, seu valor sera de ${valorMes.toFixed(2)}`);
+        }
+    }
+
+</script>

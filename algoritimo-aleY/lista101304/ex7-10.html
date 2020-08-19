@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 - 10</title>
+</head>
+<body>
+    <h1>dado</h1>
+    <button onclick="random()">jogar dado</button><br>
+    <img src="" alt="" id="imgDado">
+</body>
+</html>
+<script>
+    function random() {
+        let dado = Math.floor(Math.random()* 6)+1;
+        console.log(dado);
+        if (dado == 1) {
+            imgDado.src = '1.png';
+        } else if (dado == 2) {
+            imgDado.src = '2.png';
+        }  else if (dado == 3) {
+            imgDado.src = '3.png';
+        }  else if (dado == 4) {
+            imgDado.src = '4.png';
+        }  else if (dado == 5) {
+            imgDado.src = '5.png';
+        }  else if (dado == 6) {
+            imgDado.src = '6.png';
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inpNota1" type="text" placeholder="Nota 1:"><br>
+    <input id="inpNota2" type="text" placeholder="Nota 2:"><br>
+    <input id="inpNota3" type="text" placeholder="Nota 3:"><br>
+    <button onclick="calc()"> Analisar desempenho</button> <br>
+
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let media = (parseInt(inpNota1.value) + parseInt(inpNota2.value) + parseInt(inpNota3.value)) / 3;
+
+        result.innerHTML = `sua media foi de ${media.toFixed(2)} <br>`;
+
+        if (media >= 9.4) {
+            result.innerHTML += "parabens vc é fora de serie!";
+        }
+
+    }
+
+
+</script>

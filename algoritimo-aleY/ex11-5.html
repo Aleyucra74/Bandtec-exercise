@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 11 - 5 </title>
+</head>
+<body>
+    <h1>Netflix</h1>
+    <input type="text" id="inpHorario" placeholder="informe o horario q vc entra">
+    <br>
+    <button onclick="calc()">ver recomendacao</button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let horario = document.getElementById('inpHorario').value;
+
+        if (horario >= 19 && horario <= 21) {
+            result.innerHTML = `nao é recomendavel vc assistir sua serie nesse horario ${horario}!`;
+        } else {
+            result.innerHTML = ` o horario ${horario} é adequado para assistir sua serie parça`;
+        }
+
+    }
+</script>

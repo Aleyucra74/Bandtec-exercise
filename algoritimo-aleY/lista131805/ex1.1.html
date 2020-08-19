@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1.1 - 13</title>
+</head>
+<body>
+    <h1>login</h1>
+    <input type="text" id="inpEmail" placeholder="login"><br>
+
+    <input type="password"  id="inpSenha" placeholder="senha"><br>
+    <button onclick="logon()">Login</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function logon() {
+        let lgn = document.getElementById('inpEmail').value == 'aidimin' ? true : false;
+        let pw = document.getElementById('inpSenha').value == 'seinha' ? true : false;
+        result.innerHTML = '';
+        // console.log(lgn);
+        // console.log(pw);
+        if (!lgn && !pw) {
+            result.innerHTML += 'seu login esta invalido<br>';
+            result.innerHTML += 'sua senha esta invalida';
+            result.style.color = 'red';
+        }else if(lgn && pw) {
+            result.innerHTML = 'Usuario autenticado com sucesso!';
+            result.style.color = 'blue';
+        }else if(!lgn) {
+            result.innerHTML += 'seu login esta invalido';
+            result.style.color = 'red';
+        }else if(!pw) {
+            result.innerHTML += 'sua senha esta invalida';
+            result.style.color = 'red';
+            if(lgn){
+            alert('entre em contato com o suporte pra recuperar a senha');
+            }
+        }
+
+    }
+</script>

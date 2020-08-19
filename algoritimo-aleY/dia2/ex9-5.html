@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9 - 5</title>
+</head>
+<body>
+    <h1>Arroz</h1>
+    <input type="text" id="inpArroz" placeholder="qnt tempo de cozimento"><br>
+    <button onclick="calc()">provar arroz</button><br>
+    <figure>
+        <figcaption id="figArroz"></figcaption>
+        <img src="" alt="" id="imgArroz" width="500px">
+    </figure>
+</body>
+</html>
+<script>
+    function calc() {
+        let arroz = parseInt(document.getElementById('inpArroz').value);
+        if (arroz == 5) {
+            figArroz.innerHTML = 'parabens! arroz pfto';
+            imgArroz.src = 'arroz.jpg';
+        } else {
+            figArroz.innerHTML = 'arroz QUEIMADO! faz dnv';
+            imgArroz.src = 'queimado.jpg';
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 6 - 10</title>
+</head>
+<body>
+    <h1>Time</h1>
+    <button onclick="luck()">sortear time</button><br>
+    <div id="result"></div><br>
+    <img src="" alt="" id="imgFoto" width="150px">
+</body>
+</html>
+<script>
+    function luck() {
+        let time = Math.floor(Math.random()*4)+1;
+        console.log(time);
+        if (time == 1) {
+            result.innerHTML = 'corinthias';
+            imgFoto.src = 'https://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F874.png';
+        } else if(time == 2){
+            result.innerHTML = 'santos';
+            imgFoto.src = 'https://www.jj.com.br/arquivos/2019/10/Santos.png';
+        }else if (time == 3) {
+            result.innerHTML = 'palmeiras';
+            imgFoto.src = 'https://pbs.twimg.com/profile_images/1096436806273458176/YCJDKEdv_400x400.png';
+        } else if(time == 4){
+            result.innerHTML = 'sao paulo';
+            imgFoto.src = 'https://pbs.twimg.com/profile_images/1095375753057837056/q1HxQ3WV_400x400.jpg';
+        }
+    }
+</script>

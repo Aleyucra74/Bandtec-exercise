@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4 - 14</title>
+</head>
+
+<body>
+    <h1>Marvel or DC</h1>
+    <select id="slcCinema">
+        <option value="" disabled selected>-- escolha um --</option>
+        <option value="marvel"> Marvel </option>
+        <option value="dc">DC</option>
+    </select><br>
+    <button onclick="programa()">Ver programação semanal na tv</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function programa() {
+        emp = undefined;
+        var empresa = document.getElementById('slcCinema').value;
+        for (var i = 1; i <= 5; i++) {
+            var random = Math.floor(Math.random() * 51) + 1;
+            var emp = random % 2 == 0 ? 'marvel' : 'dc';
+            if (empresa == emp) {
+                break;
+            }
+        }
+            console.log(i);
+            console.log(random);
+        if (i < 5) {
+            result.innerHTML = `Você verá um filme que gosta no ${i}º dia`;
+        } else {
+            result.innerHTML = 'é, ou vc le um livro ou assiste um filme que nao gosta mesmo.';
+        }
+    }
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2 - 17</title>
+</head>
+<body>
+    <h1 id="a">times</h1>
+    <form id="forme">
+    <input type="text" name="ola" id="inpNome" placeholder="nome do time"><br>
+    <input type="text" name="ola" id="inpVitoria" placeholder="vitoria"><br>
+    <input type="text" name="ola" id="inpEmpate" placeholder="empate"><br>
+    <input type="text" name="ola" id="inpDerrota" placeholder="derrota"><br>
+    <button onclick="timeUm()" id="btn">Enviar time 1</button><br>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    // function reset(){
+    //     return document.getElementById('a').innerHTML = 'oi';
+    // }
+
+    // function jpgps() {
+    //         return alert('soma', reset())
+    // }
+        const time1 = { 
+            nome: '',
+            vitoria: 0,
+            empate: 0,
+            derrota:0,
+        };
+        const time2 = { 
+            nome: '',
+            vitoria: 0,
+            empate: 0,
+            derrota:0,
+        };
+
+
+        function timeDois() {
+            var name = document.getElementById('inpNome').value;
+            var win = document.getElementById('inpVitoria').value;
+            var defeat = document.getElementById('inpEmpate').value;
+            var draw = document.getElementById('inpDerrota').value;
+
+            time2.nome = name;
+            time2.vitoria = win*3;
+            time2.empate = draw*1;
+            time2.derrota = defeat*0;
+
+            document.getElementById('result').innerHTML = `
+                o time ${time1.nome} terminou o campeonato com ${time1.vitoria+time1.empate} pontos <br>
+                o time ${time2.nome} terminou o campeonato com ${time2.vitoria+time2.empate} pontos 
+            `;
+            event.preventDefault();
+        }
+
+        function reset() {
+            document.getElementById('forme').reset();
+            document.getElementById('btn').innerHTML = 'comparar campanhas';
+            document.getElementById('btn').setAttribute('onclick', 'timeDois()');
+        }
+
+        function timeUm() {
+            var name = document.getElementById('inpNome').value;
+            var win = document.getElementById('inpVitoria').value;
+            var defeat = document.getElementById('inpEmpate').value;
+            var draw = document.getElementById('inpDerrota').value;
+
+            time1.nome = name;
+            time1.vitoria = win*3;
+            time1.empate = draw*1;
+            time1.derrota = defeat*0;
+            // JSON.stringify(time1)
+            event.preventDefault();
+
+            return alert('agora preencha o time2', reset());
+        }
+
+</script>

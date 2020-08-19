@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 15 - 13</title>
+</head>
+
+<body>
+    <h1>PENTA com for</h1>
+    <button onclick="tripenta()">curto 3 e 5</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function tripenta() {
+        for (let i = 0; i <= 100; i++) {
+            let tres = i % 3 == 0 ? true : false;
+            let cinco = i % 5 == 0 ? true : false;
+
+            if (tres && cinco) {
+                result.innerHTML += 'É TRIPENTA<br>';
+            } else if (cinco) {
+                result.innerHTML += 'É PENTA<br>';
+            } else if (tres) {
+                result.innerHTML += 'É TRI<br>';
+            } else {
+                result.innerHTML += `${i}<br>`;
+            }
+        }
+    }
+</script>

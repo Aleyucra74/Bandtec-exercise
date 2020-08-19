@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 - 9</title>
+</head>
+
+<body>
+    <h1>clima</h1>
+    <input type="text" id="inpTemp" placeholder="temperatura"><br>
+    <input type="text" id="inpUmi" placeholder="umidade do ar"><br>
+    <button onclick="calc()">avaliar clima</button><br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function calc() {
+        let temp = parseInt(document.getElementById('inpTemp').value);
+        let umi = parseInt(document.getElementById('inpUmi').value);
+        if (umi < 0 || umi > 100) {
+            alert('valor de umidade invalido');
+            result.innerHTML = '';
+        } else {
+            if (temp >= 22 && temp <= 23 && umi < 60) {
+                result.innerHTML = 'clima agradavel';
+            } else {
+                result.innerHTML = 'clima desconfortavel';
+            }
+        }
+    }
+</script>

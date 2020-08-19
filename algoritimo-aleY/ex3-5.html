@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 -5</title>
+</head>
+<body>
+    <h1>ola amigos</h1>
+    <input id="inpPizza" type="text" placeholder="valor da pizzas"><br>
+    <input id="inpAmigo" type="text" placeholder="qnts amigos?">
+    <br>
+    <button onclick="calc()" >Rola a pizza?</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+
+    function calc() {
+        let valor = (parseInt(inpPizza.value) / parseInt(inpAmigo.value));
+
+        result.innerHTML = `cada amigo vai pagar R$${valor} reais.<br>`;
+        result.style.color =  'blue';
+
+        if (valor >= 20) {
+            result.innerHTML += '<b><i>deu ruim pizza muito cara</i></b>';
+        }
+
+    }
+
+</script>

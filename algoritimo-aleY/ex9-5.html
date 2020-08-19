@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9 - 5</title>
+</head>
+<body>
+    <h1>Controle de peso</h1>
+
+    <input type="text" id="inpQntdHomem" placeholder="qntd de homens que entraram no elevator">
+    <br>
+    <input type="text" id="inpQntdMulher" placeholder="qntd de mulheres q entraram no elevator">
+    <br>
+    <button onclick="calc()">Analisar peso</button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let homem = parseInt(inpQntdHomem.value);
+        let mulher = parseInt(inpQntdMulher.value);
+
+        let conta = ((homem*80)+(mulher*60));
+
+        result.innerHTML = `este elevator suporta 800kg e o peso estimado desta lotação é de ${conta}kg <br>`;
+        if (conta >800) {
+            result.innerHTML += 'sera necessario desce alguem para q o elevator funfe';
+            result.style.color = 'blue';
+        }
+
+    }
+</script>

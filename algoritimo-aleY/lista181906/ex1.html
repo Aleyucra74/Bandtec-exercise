@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercicio 1/2 - 18</title>
+</head>
+<body>
+    <h1>Entrada</h1>
+    <button onclick="entrou(85)">Entrou Homem</button><br>
+    <button onclick="entrou(70)">Entrou Mulher</button><br>
+    <button onclick="entrou(-85)">Sair Homem</button><br>
+    <button onclick="entrou(-70)">Sair Mulher</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    let pesoTotal = 0;
+    function entrou(peso) {
+        pesoTotal += peso;
+
+        result.innerHTML = pesoTotal;
+        if(pesoTotal< 800) {
+            result.innerHTML += 'Kg Tranquilo';
+        }else{
+            result.innerHTML += 'Kg passou do pesso permitido';
+        }
+    }
+</script>

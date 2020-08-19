@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 10 - 13</title>
+</head>
+
+<body>
+    <h1>banco</h1>
+    <input type="text" id="inpQnt" placeholder="qnt de deposito"><br>
+    <input type="text" id="inpValor" placeholder="valor de cada deposito"><br>
+    <button onclick="calc()">acompanhar grana</button><br>
+    <div id="result"></div>
+    <div id="resultB"></div>
+</body>
+
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        let j = 0;
+        let valorT = 0;
+        let qnt = parseInt(document.getElementById('inpQnt').value);
+        let valor = parseInt(document.getElementById('inpValor').value);
+        let star = ['&star;'];
+        for (let i = 1; i <= qnt; i++) {
+            valorT += valor;
+            if (i % 3 == 0) {
+                valorT  *= 1.01;
+                result.innerHTML += `${star[0]} Bonus: `;
+            }
+            result.innerHTML += `${i}° mes: R$${valorT.toFixed(2)} <br>`;
+        }
+        resultB.innerHTML = `Total guardado: R$${valorT.toFixed(2)}`;
+    }
+</script>

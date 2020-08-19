@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 13</title>
+</head>
+<body>
+    <h1>nota</h1>
+    <input type="text" id="inpNota" placeholder="sua nota"><br>
+    <input type="text" id="inpFreq" placeholder="sua freq"><br>
+    <button onclick="avaliar()">avaliar</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function avaliar() {
+        let nota = parseInt(document.getElementById('inpNota').value) < 6;
+        let freq = parseInt(document.getElementById('inpFreq').value) < 75;
+        let frase = '';
+        if (!nota && !freq) {
+            frase = 'parabens vc foi aprovado';
+        }else if(nota){
+            frase = 'reprovado por nota<br>';
+        }
+        if(freq) {
+            frase += 'reprovado por frequencia';
+        }
+        result.innerHTML = frase;
+
+
+    }
+</script>

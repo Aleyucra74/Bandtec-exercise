@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 15</title>
+</head>
+<body>
+    <h1>email</h1>
+    <input type="text" id="inpEmail" onkeyup="calc()" placeholder="seu email"><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        result.innerHTML = '';
+        var email = document.getElementById('inpEmail').value;
+
+        result.innerHTML += email.indexOf('@') != -1 && email.indexOf('.') != -1 && email.length > 7 ? 'email valido' : 'email invalido' ;
+    }
+
+</script>

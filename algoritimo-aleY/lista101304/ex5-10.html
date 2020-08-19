@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 5 - 10</title>
+</head>
+<body>
+    <h1>temperatura</h1>
+    <button onclick="luck()">sortear temperatura</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function luck() {
+        let temp = Math.floor(Math.random() *100) -50;
+        console.log(temp);
+        result.innerHTML = `a temperatura sorteada foi ${temp} <br>`;
+        if (temp < 1 ) {
+            result.innerHTML += 'da pra conservar qualquer alimento';
+        } else if(temp > 1 && temp < 10){
+            result.innerHTML += 'conserva a maioria dos alimentos';
+        }else if(temp > 10){
+            result.innerHTML += 'estraga a maioria dos alimentos';
+        }
+    }
+</script>

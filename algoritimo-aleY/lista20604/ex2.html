@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+    <input type="text" id="inpTemp" placeholder="qual a temp atual"><br>
+    <button onclick="calc()">Medir conforto</button>
+</body>
+</html>
+<script>
+    function calc() {
+        let temp = parseInt(document.getElementById('inpTemp').value);
+        if (temp >= 22 && temp <= 23) {
+            alert('temperatura confortavel');
+        } else {
+            alert('temperatura desconfortavel');
+        }
+    }
+</script>

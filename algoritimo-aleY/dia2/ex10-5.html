@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 10 - 5</title>
+</head>
+<body>
+    <h1>Desafio</h1>
+    <h2>atacante de fut</h2>
+
+    <input type="text" id="inpPartida" placeholder="qnt partidas vc ja jogou"><br>
+    <input type="text" id="inpGols" placeholder="qnts gols ja fez"><br>
+    <button onclick="calc()">estudar atacante</button>
+    <br>
+    <div id="result">
+        <img src="" alt="" id="img">
+    </div>
+</body>
+</html>
+<script>
+    function calc() {
+        let partida = parseInt(document.getElementById('inpPartida').value);
+        let gol = parseInt(document.getElementById('inpGols').value);
+
+        let media = partida / gol;
+
+        if (media > 0.6) {
+            result.innerHTML = 'atacante de futuro';
+            img.src = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.gazetaesportiva.com%2Fwp-content%2Fuploads%2Fimagem%2F2019%2F03%2F19%2F000_1EL37N-1024x705.jpg&imgrefurl=https%3A%2F%2Fwww.gazetaesportiva.com%2Ffutebol%2Ffutebol-internacional%2Fconfira-os-9-jogadores-de-futebol-mais-bem-pagos-do-mundo-em-2018%2F&tbnid=gMgc7x2X_cR9dM&vet=12ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygBegUIARDaAg..i&docid=s63zSBGxQhYSQM&w=1024&h=705&q=jogadores%20de%20fute&client=firefox-b-d&ved=2ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygBegUIARDaAg';
+        } else {
+            if(media > 0.2) {
+                result.innerHTML = 'atacante mediano';
+                img.src = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.mlssoccer.com.br%2Fwp-content%2Fuploads%2F2019%2F01%2FJadon_Sancho-670x445.jpg&imgrefurl=https%3A%2F%2Fwww.mlssoccer.com.br%2F5-jogadores-que-podem-se-tornar-os-mais-novos-craques-do-futebol%2F&tbnid=6Fwv3NLwzs7avM&vet=12ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygEegUIARDgAg..i&docid=GONGhK7yXcSsUM&w=670&h=445&q=jogadores%20de%20fute&client=firefox-b-d&ved=2ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygEegUIARDgAg';
+            }
+            if (media < 0.6) {
+                result.innerHTML = 'atacante mediano';
+                img.src = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.mlssoccer.com.br%2Fwp-content%2Fuploads%2F2019%2F01%2FJadon_Sancho-670x445.jpg&imgrefurl=https%3A%2F%2Fwww.mlssoccer.com.br%2F5-jogadores-que-podem-se-tornar-os-mais-novos-craques-do-futebol%2F&tbnid=6Fwv3NLwzs7avM&vet=12ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygEegUIARDgAg..i&docid=GONGhK7yXcSsUM&w=670&h=445&q=jogadores%20de%20fute&client=firefox-b-d&ved=2ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygEegUIARDgAg'
+            }
+        }
+        if (media < 0.2) {
+            result.innerHTML = 'muda de posicao';
+            img.src = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.metrolatam.com%2F2020%2F01%2F08%2Fgettyimages11902-f641a31efe730b5fe1c71506ede11c35-1200x600.jpg&imgrefurl=https%3A%2F%2Fwww.metrojornal.com.br%2Fesporte%2F2020%2F01%2F11%2Fjogadores-de-futebol-mais-valiosos-mundo.html&tbnid=ZtzRkJN0An8nRM&vet=12ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygIegUIARDoAg..i&docid=bV8m-1OFvNWl9M&w=1200&h=600&q=jogadores%20de%20fute&client=firefox-b-d&ved=2ahUKEwi0s92X7szoAhXkBLkGHSkQDK8QMygIegUIARDoAg';
+            
+        }
+
+    }
+
+
+</script>

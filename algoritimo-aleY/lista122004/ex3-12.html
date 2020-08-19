@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 12</title>
+</head>
+<body>
+    <h1>time</h1>
+    <input type="text" id="inpTimeBom" placeholder="nome do time bom"><br>
+    <input type="text" id="inpTimeRuim" placeholder="nome do time ruim"><br>
+    <button onclick="calc()">repetir a realidade</button><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        let time1 = document.getElementById('inpTimeBom').value;
+        let time2 = document.getElementById('inpTimeRuim').value;
+        let cont =0;
+        
+        while (cont < 10) {
+            result.innerHTML += `<b>${time1}</b> é melhor do q o <b>${time2}</b><br>`;
+            cont++            
+        }
+    }
+</script>

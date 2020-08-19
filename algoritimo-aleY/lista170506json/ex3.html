@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 - 17</title>
+</head>
+
+<body>
+    <h1>conta banco</h1>
+    <div>
+        <p>
+            Saldo: R$ <b id="bSaldo">0.00</b><br>
+            Depósito: <b id="bDeposito">0</b><br>
+            Saques: <b id="bSaque">0</b>
+        </p>
+        <div id="divFrase"></div>
+    </div>
+    <button onclick="deposito()">Depositar 100</button><br>
+    <button onclick="saque()">Sacar 20</button>
+</body>
+
+</html>
+<script>
+    let saldoConta = {
+        saldo: 0,
+        deposito: 0,
+        saque: 0
+    };
+
+    function deposito() {
+        bSaldo.innerHTML = '';
+        saldoConta.deposito++;
+        saldoConta.saldo += 100;
+        bSaldo.innerHTML += saldoConta.saldo.toFixed(2);
+        bDeposito.innerHTML = saldoConta.deposito;
+        if (saldoConta.saldo>0) {
+            divFrase.innerHTML='';
+        }
+    }
+
+    function saque() {
+        bSaldo.innerHTML = '';
+        saldoConta.saque++;
+        saldoConta.saldo -= 20;
+        bSaldo.innerHTML += saldoConta.saldo.toFixed(2);
+        bSaque.innerHTML = saldoConta.saque;
+        if (saldoConta.saldo < 0) {
+            divFrase.innerHTML += 'parece que vc esta negativado';
+        }        
+    }
+</script>

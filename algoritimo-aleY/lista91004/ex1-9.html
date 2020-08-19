@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1 - 9</title>
+</head>
+<body>
+    <h1>Governo</h1>
+    <input type="text" id="inpRenda" placeholder="renda individual"><br>
+    <input type="text" id="inpRendaFamiliar" placeholder="renda familiar"><br>
+    <button onclick="calc()">terei o beneficio</button>
+</body>
+</html>
+<script>
+    function calc() {
+        let renda = parseInt(document.getElementById('inpRenda').value);
+        let rendaFamiliar = parseInt(document.getElementById('inpRendaFamiliar').value);
+
+        if (renda <= 2000 || rendaFamiliar <= 3000) {
+            alert('voce tera direito ao auxilio');
+        }else {
+            alert('vc nao tem o direito');
+        }
+    }
+</script>

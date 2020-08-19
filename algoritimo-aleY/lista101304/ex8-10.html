@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 - 10</title>
+</head>
+<body>
+    <h1>resto</h1>
+    <input type="text" id="inpNmr"><br>
+    <button onclick="calc()">é divisivel por 7?</button>
+</body>
+</html>
+<script>
+    function calc() {
+        let nmr = parseInt(document.getElementById('inpNmr').value);
+        if (nmr % 7 == 0) {
+            alert('sim, é');
+        } else {
+            alert('não é');
+        }
+    }
+
+</script>
