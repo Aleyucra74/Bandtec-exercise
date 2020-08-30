@@ -16,6 +16,8 @@ public class Exec02Sorvete extends javax.swing.JFrame {
      */
     public Exec02Sorvete() {
         initComponents();
+        lblResultado.setVisible(false);
+        lblResultado.setText("casquinha custa R$2,00 \n\n sundae custa R$5,00 \n\n milkshake custa R$7,00");
     }
 
     /**
@@ -32,10 +34,11 @@ public class Exec02Sorvete extends javax.swing.JFrame {
         rdBtnCasquinha = new javax.swing.JRadioButton();
         rdBtnSundae = new javax.swing.JRadioButton();
         rdBtnMilkshake = new javax.swing.JRadioButton();
+        lblResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitulo.setText("Soverteria");
+        lblTitulo.setText("Sorveteria");
         lblTitulo.setMaximumSize(new java.awt.Dimension(52, 25));
         lblTitulo.setMinimumSize(new java.awt.Dimension(52, 25));
         lblTitulo.setPreferredSize(new java.awt.Dimension(52, 25));
@@ -43,10 +46,27 @@ public class Exec02Sorvete extends javax.swing.JFrame {
         lblEscolha.setText("Escolha um:");
 
         rdBtnCasquinha.setText("casquinha");
+        rdBtnCasquinha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdBtnCasquinhaActionPerformed(evt);
+            }
+        });
 
         rdBtnSundae.setText("sundae");
+        rdBtnSundae.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdBtnSundaeActionPerformed(evt);
+            }
+        });
 
         rdBtnMilkshake.setText("milkshake");
+        rdBtnMilkshake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdBtnMilkshakeActionPerformed(evt);
+            }
+        });
+
+        lblResultado.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,8 +88,11 @@ public class Exec02Sorvete extends javax.swing.JFrame {
                         .addComponent(rdBtnSundae))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(rdBtnMilkshake)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                        .addComponent(rdBtnMilkshake))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,11 +107,30 @@ public class Exec02Sorvete extends javax.swing.JFrame {
                 .addComponent(rdBtnSundae)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdBtnMilkshake)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    private void rdBtnCasquinhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnCasquinhaActionPerformed
+        // TODO add your handling code here:
+        lblResultado.setVisible(true);
+        
+    }//GEN-LAST:event_rdBtnCasquinhaActionPerformed
+
+    private void rdBtnSundaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnSundaeActionPerformed
+        // TODO add your handling code here:
+        lblResultado.setVisible(true);
+    }//GEN-LAST:event_rdBtnSundaeActionPerformed
+
+    private void rdBtnMilkshakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnMilkshakeActionPerformed
+        // TODO add your handling code here:
+        lblResultado.setVisible(true);
+    }//GEN-LAST:event_rdBtnMilkshakeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,6 +169,7 @@ public class Exec02Sorvete extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblEscolha;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rdBtnCasquinha;
     private javax.swing.JRadioButton rdBtnMilkshake;
