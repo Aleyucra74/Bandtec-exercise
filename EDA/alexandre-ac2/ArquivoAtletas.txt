@@ -1,0 +1,4 @@
+00ATLETAS0220100112-04-2021 19:29:1700
+012201001 ale                 corredor            1,75 alongar                  asd                      f
+012201002 ale2                ciclista            1,60 correr                   sdf                      m
+020000000002
