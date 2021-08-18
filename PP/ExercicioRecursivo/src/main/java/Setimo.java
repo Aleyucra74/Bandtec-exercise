@@ -10,13 +10,15 @@ public class Setimo {
         return valorMaximo;
     }
 
-    public static int MaiorValorVetorRecursivo(int[] vetor; int posicao){
-        int valorMaximo=vetor[posicao];
-        if(vetor[posicao]>valorMaximo){
+    public static int MaiorValorVetorRecursivo(int[] vetor, int posicao, int valor){
+        int valorMaximo=valor;
+        if(posicao >= vetor.length){
+            return valorMaximo;
+        }else if(vetor[posicao]>valorMaximo){
             valorMaximo=vetor[posicao];
-            MaiorValorVetorRecursivo(vetor,posicao+1);
+            return MaiorValorVetorRecursivo(vetor,posicao+1,valorMaximo);
         }else{
-            MaiorValorVetorRecursivo(vetor,posicao+1);
+            return MaiorValorVetorRecursivo(vetor,posicao+1,valorMaximo);
         }
     }
 
@@ -24,7 +26,7 @@ public class Setimo {
     public static void main(String[] args){
         int[] vetor= {1,3,52,1,55,56};
 
-        System.out.println(MaiorValorVetorRecursivo(vetor,0));
+        System.out.println(MaiorValorVetorRecursivo(vetor,0,0));
     }
     
 
