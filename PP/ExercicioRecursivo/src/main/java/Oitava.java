@@ -26,7 +26,7 @@ public class Oitava {
     }
 
     public static void main(String[] args) {
-        System.out.println(rec(132,0));
+        System.out.println(rec(-132,0));
     }
 
 }
