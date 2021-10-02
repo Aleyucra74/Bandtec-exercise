@@ -17,7 +17,7 @@ public class ListaLigada {
     public void exibe(){
         Node atual = head.getNext();
         while (atual != null){
-            System.out.println(atual.getInfo());
+            System.out.print(atual.getInfo()+" ");
             atual = atual.getNext();
         }
     }
