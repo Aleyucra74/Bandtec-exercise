@@ -22,27 +22,60 @@ public class AlunoRepository {
     }
 
     public Aluno findByRA(String registro) {
+        if(registro == null){
+            throw new IllegalArgumentException();
+        }
+
         return this.head.stream()
                 .filter((aluno) -> aluno.getRa().equals(registro))
-                .
+                .toNodeTail().getValue();
     }
 
     public List<Aluno> findByTurma(String turma) {
-        return Collections.emptyList();
+        if(turma == null){
+            throw new IllegalArgumentException();
+        }
+
+        return head.stream()
+                .filter((aluno) -> turma.equals(aluno.getTurma()))
+                .toList();
     }
 
     public boolean exists(Aluno aluno) {
-        return false;
+        if(aluno == null){
+            throw new IllegalArgumentException();
+        }
+
+        return this.head.stream()
+                .anyMatch(item -> item.equals(aluno));
     }
 
     public boolean existsByRA(String registro) {
-        return false;
+        if(registro == null){
+            throw new IllegalArgumentException();
+        }
+        return this.head.stream()
+                .anyMatch(item -> item.getRa().equals(registro));
     }
 
     public void saveAll(List<Aluno> alunos) {
+        if(alunos == null){
+            throw new IllegalArgumentException();
+        }
+
+        for (int i = 0; i < alunos.size(); i++) {
+            if(exists(alunos.get(i))){
+                i = i + 1;
+            }
+            save(alunos.get(i));
+        }
     }
 
     public void save(Aluno aluno) {
+        if(aluno == null || findByRA(aluno.getRa()) != null ){
+            throw new IllegalArgumentException();
+        }
+
         Node novoAluno = new Node(aluno);
 
         novoAluno.setNext(head.getNext());
@@ -54,9 +87,27 @@ public class AlunoRepository {
     }
 
     public void delete(Aluno aluno) {
+        if(aluno == null || !exists(aluno)){
+            throw new IllegalArgumentException();
+        }
+
+        Node anterior = head;
+        Node atual = head.getNext();
+
+        while (atual != null){
+            if(atual.getValue().equals(aluno)){
+                anterior.setNext(atual.getNext());
+                atual.getNext().setPrevious(anterior);
+                break;
+            }else{
+                anterior = atual;
+                atual = atual.getNext();
+            }
+        }
     }
 
     public void deleteAll() {
+        this.head.setNext(null);
     }
 
     public int count() {
