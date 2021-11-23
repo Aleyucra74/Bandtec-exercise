@@ -37,7 +37,7 @@ public class AlunoRepository {
         }
 
         return head.stream()
-                .filter((aluno) -> turma.equals(aluno.getTurma()))
+                .filter((aluno) -> aluno.getTurma().equals(turma))
                 .toList();
     }
 
@@ -63,27 +63,19 @@ public class AlunoRepository {
             throw new IllegalArgumentException();
         }
 
-        for (int i = 0; i < alunos.size(); i++) {
-            if(exists(alunos.get(i))){
-                i = i + 1;
-            }
-            save(alunos.get(i));
-        }
+        alunos.forEach(aluno -> {
+            try {
+                save(aluno);
+            }catch (IllegalArgumentException e){}
+        });
     }
 
     public void save(Aluno aluno) {
-        if(aluno == null || findByRA(aluno.getRa()) != null ){
+        if(aluno == null || exists(aluno) ){
             throw new IllegalArgumentException();
         }
-
-        Node novoAluno = new Node(aluno);
-
-        novoAluno.setNext(head.getNext());
-        novoAluno.setPrevious(head);
-        head.setNext(novoAluno);
-        if(novoAluno.getNext() != null){
-            novoAluno.getNext().setPrevious(novoAluno);
-        }
+        tail.setNext(new Node<>(aluno));
+        tail = tail.getNext();
     }
 
     public void delete(Aluno aluno) {
@@ -91,16 +83,12 @@ public class AlunoRepository {
             throw new IllegalArgumentException();
         }
 
-        Node anterior = head;
-        Node atual = head.getNext();
-
-        while (atual != null){
-            if(atual.getValue().equals(aluno)){
-                anterior.setNext(atual.getNext());
-                atual.getNext().setPrevious(anterior);
+        Node<Aluno> atual = head;
+        while (atual.getNext() != null){
+            if(atual.getNext().getValue().equals(aluno)){
+                atual.setNext(atual.getNext().getNext());
                 break;
             }else{
-                anterior = atual;
                 atual = atual.getNext();
             }
         }
